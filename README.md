@@ -1,29 +1,33 @@
+# Spring AI+Ollama+pgvectorÊµÏÖ±¾µØRAG
 
-# Spring AI+Ollama+pgvectorå®ç°æœ¬åœ°RAG
+## Ç°ÑÔ
 
-## å‰è¨€
+±¾ÏîÄ¿ÊÇÎªÁËÔÚ±¾µçÄÔÉÏÊµÏÖhttps://github.com/jianyuan1991/ragdemo£¬ÓÉÓÚÎÒÃÇ±¾À´¾ÍÊ¹ÓÃÁËRuo-YiµÄ¿ªÔ´£¬ÔÚ´ËÅäÖÃµÄ»ù´¡ÉÏÊµÏÖgithubÖĞµÄÄÚÈİ
 
-ä¹‹å‰å†™è¿‡ä¸€ç¯‡[Spring AI+Ollamaæœ¬åœ°ç¯å¢ƒæ­å»º](https://www.bxmdm.com/archives/2024030801)çš„æ–‡ç« ï¼Œæœ¬ç¯‡åœ¨æ­¤åŸºç¡€ä¸Šè¿›ä¸€æ­¥æ­å»ºæœ¬åœ°RAGã€‚RAGæ˜¯ç›®å‰å¤§æ¨¡å‹åº”ç”¨è½åœ°çš„ä¸€å¥—è§£å†³æ–¹æ¡ˆï¼Œä¸­æ–‡åå«æ£€ç´¢å¢å¼ºï¼Œç”±äºå¤§è¯­è¨€æ¨¡å‹æœ‰æ—¶æ•ˆæ€§å’Œå¹»è§‰ç­‰å±€é™æ€§ï¼Œä½¿ç”¨RAGæ–¹æ¡ˆï¼Œå…ˆåˆ©ç”¨æœç´¢æŠ€æœ¯ä»æœ¬åœ°çŸ¥è¯†ä¸­æœç´¢å‡ºæƒ³è¦çš„ç›¸å…³ä¿¡æ¯ï¼Œåœ¨å°†ç›¸å…³ä¿¡æ¯ç»„æˆpromptä¸­ä¸Šä¸‹æ–‡çš„ä¸€éƒ¨åˆ†ï¼Œåœ¨ç”±å¤§æ¨¡å‹æ ¹æ®promptè¿›è¡Œå›å¤ã€‚æœ¬æ¬¡å°±æ„å»ºä¸€ä¸ªdemoï¼Œä½¿ç”¨RAGæŠ€æœ¯æ„å»ºä¸€ä¸ªæ–‡æ¡£é—®ç­”çš„åº”ç”¨ã€‚å¦‚å›¾æ‰€ç¤ºï¼ŒRAGæ–‡æ¡£é—®ç­”çš„æ•´ä½“æµç¨‹å¤§è‡´åˆ†æˆä¸¤ä¸ªé˜¶æ®µï¼š
+githubµÄ×÷ÕßÖ®Ç°Ğ´¹ıÒ»Æª[Spring AI+Ollama±¾µØ»·¾³´î½¨](https://www.bxmdm.com/archives/2024030801)µÄÎÄÕÂ£¬ÔÚÕâÀïµÄ»·¾³¸Ä¶¯ÊÇjdkµÄÉı¼¶£¨1.8->1.17£©£¬mavenµÄ½µ¼¶£¨×îĞÂ°æ->3.8.4£©¡£
 
-1ã€æ•°æ®å‡†å¤‡ï¼Œå°†å¾…æ–‡æœ¬æ•°æ®é€šè¿‡embeddingæ¨¡å‹è½¬æˆæ–‡æœ¬å‘é‡ï¼Œå¹¶å­˜å‚¨åˆ°å‘é‡æ•°æ®åº“ä¸­ã€‚
+## RAG¼ò½é
+RAGÊÇÄ¿Ç°´óÄ£ĞÍÓ¦ÓÃÂäµØµÄÒ»Ì×½â¾ö·½°¸£¬ÖĞÎÄÃû½Ğ¼ìË÷ÔöÇ¿£¬ÓÉÓÚ´óÓïÑÔÄ£ĞÍÓĞÊ±Ğ§ĞÔºÍ»Ã¾õµÈ¾ÖÏŞĞÔ£¬Ê¹ÓÃRAG·½°¸£¬ÏÈÀûÓÃËÑË÷¼¼Êõ´Ó±¾µØÖªÊ¶ÖĞËÑË÷³öÏëÒªµÄÏà¹ØĞÅÏ¢£¬ÔÚ½«Ïà¹ØĞÅÏ¢×é³ÉpromptÖĞÉÏÏÂÎÄµÄÒ»²¿·Ö£¬ÔÚÓÉ´óÄ£ĞÍ¸ù¾İprompt½øĞĞ»Ø¸´¡£±¾´Î¾Í¹¹½¨Ò»¸ödemo£¬Ê¹ÓÃRAG¼¼Êõ¹¹½¨Ò»¸öÎÄµµÎÊ´ğµÄÓ¦ÓÃ¡£ÈçÍ¼ËùÊ¾£¬RAGÎÄµµÎÊ´ğµÄÕûÌåÁ÷³Ì´óÖÂ·Ö³ÉÁ½¸ö½×¶Î£º
 
-2ã€ç”¨æˆ·æé—®ï¼Œå°†ç”¨æˆ·æå‡ºçš„æ–‡æœ¬é€šè¿‡embeddingæ¨¡å‹è½¬æˆé—®é¢˜æ–‡æœ¬å‘é‡ï¼Œå¹¶åœ¨å‘é‡åº“ä¸­è¿›è¡Œæœç´¢ï¼Œæœç´¢å¾—åˆ°ä¸€äº›æ–‡æœ¬æ®µè½ï¼Œå°†æœç´¢åˆ°çš„æ–‡æœ¬æ®µè½ç»„è£…æˆpromptå»è°ƒç”¨å¤§æ¨¡å‹æ¥è·å¾—ç­”æ¡ˆã€‚
+1¡¢Êı¾İ×¼±¸£¬½«´ıÎÄ±¾Êı¾İÍ¨¹ıembeddingÄ£ĞÍ×ª³ÉÎÄ±¾ÏòÁ¿£¬²¢´æ´¢µ½ÏòÁ¿Êı¾İ¿âÖĞ¡£
+
+2¡¢ÓÃ»§ÌáÎÊ£¬½«ÓÃ»§Ìá³öµÄÎÄ±¾Í¨¹ıembeddingÄ£ĞÍ×ª³ÉÎÊÌâÎÄ±¾ÏòÁ¿£¬²¢ÔÚÏòÁ¿¿âÖĞ½øĞĞËÑË÷£¬ËÑË÷µÃµ½Ò»Ğ©ÎÄ±¾¶ÎÂä£¬½«ËÑË÷µ½µÄÎÄ±¾¶ÎÂä×é×°³ÉpromptÈ¥µ÷ÓÃ´óÄ£ĞÍÀ´»ñµÃ´ğ°¸¡£
 
 ```mermaid
 graph LR  
     
-    user[User] --> question[é—®é¢˜]
-    doc[æ–‡æœ¬æ•°æ®] --> embedding[Embedding Model]  
-    embedding --> docVector[æ–‡æœ¬å‘é‡]
-    docVector --> VectorDatabase[å‘é‡æ•°æ®åº“]
-    question[é—®é¢˜] --> embedding[Embedding Model] 
-    embedding[Embedding Model]  --> questionVector[é—®é¢˜å‘é‡]
-    questionVector[é—®é¢˜å‘é‡] --> VectorDatabase[å‘é‡æ•°æ®åº“]
-    VectorDatabase[å‘é‡æ•°æ®åº“] --> docParagraph[æ–‡æœ¬æ®µè½]
-    docParagraph[æ–‡æœ¬æ®µè½] --> prompt[æç¤ºè¯]
-    prompt[æç¤ºè¯] --> llm[å¤§æ¨¡å‹]
-    llm[å¤§æ¨¡å‹] --> answer[ç­”æ¡ˆ]
-    answer[ç­”æ¡ˆ] --> user[User]
+    user[User] --> question[ÎÊÌâ]
+    doc[ÎÄ±¾Êı¾İ] --> embedding[Embedding Model]  
+    embedding --> docVector[ÎÄ±¾ÏòÁ¿]
+    docVector --> VectorDatabase[ÏòÁ¿Êı¾İ¿â]
+    question[ÎÊÌâ] --> embedding[Embedding Model] 
+    embedding[Embedding Model]  --> questionVector[ÎÊÌâÏòÁ¿]
+    questionVector[ÎÊÌâÏòÁ¿] --> VectorDatabase[ÏòÁ¿Êı¾İ¿â]
+    VectorDatabase[ÏòÁ¿Êı¾İ¿â] --> docParagraph[ÎÄ±¾¶ÎÂä]
+    docParagraph[ÎÄ±¾¶ÎÂä] --> prompt[ÌáÊ¾´Ê]
+    prompt[ÌáÊ¾´Ê] --> llm[´óÄ£ĞÍ]
+    llm[´óÄ£ĞÍ] --> answer[´ğ°¸]
+    answer[´ğ°¸] --> user[User]
     
     style doc fill:#98FB98;
     style docVector fill:#98FB98;
@@ -35,59 +39,38 @@ graph LR
     style answer fill:#FF8C00;
 ```
 
-æœ¬æ¬¡demoä¸­ï¼Œæ•´ä½“æµç¨‹çš„ä¸šåŠ¡é€»è¾‘éƒ½é€šè¿‡spring aiæ¥å®ç°ï¼Œspring aiæ”¯æŒè°ƒç”¨Ollamaæ¥å®ç°chatå’Œembeddingï¼Œæ”¯æŒpgvectoræ¥ä½œä¸ºå‘é‡æ•°æ®å­˜å‚¨å’Œæœç´¢ï¼Œæ‰€ä»¥é€‰æ‹©çš„æ¨¡å‹å’Œæ•°æ®åº“ä¿¡æ¯å¦‚ä¸‹ï¼š
+±¾´ÎdemoÖĞ£¬ÕûÌåÁ÷³ÌµÄÒµÎñÂß¼­¶¼Í¨¹ıspring aiÀ´ÊµÏÖ£¬spring aiÖ§³Öµ÷ÓÃOllamaÀ´ÊµÏÖchatºÍembedding£¬Ö§³ÖpgvectorÀ´×÷ÎªÏòÁ¿Êı¾İ´æ´¢ºÍËÑË÷£¬ËùÒÔÑ¡ÔñµÄÄ£ĞÍºÍÊı¾İ¿âĞÅÏ¢ÈçÏÂ£º
 
-æ¨¡å‹è¿è¡Œå·¥å…·ï¼šOllama
+Ä£ĞÍÔËĞĞ¹¤¾ß£ºOllama
 
-embeddingæ¨¡å‹ï¼š mofanke/dmeta-embedding-zhï¼ˆä¸­æ–‡æ”¯æŒæ¯”è¾ƒå¥½ï¼‰
+embeddingÄ£ĞÍ£º mofanke/dmeta-embedding-zh£¨ÖĞÎÄÖ§³Ö±È½ÏºÃ£©
 
-å¤§æ¨¡å‹ï¼šqwen:7bï¼ˆä¸­æ–‡æ”¯æŒæ¯”è¾ƒå¥½ï¼‰
+´óÄ£ĞÍ£ºqwen:7b£¨ÖĞÎÄÖ§³Ö±È½ÏºÃ£©
 
-å‘é‡æ•°æ®åº“ï¼špgvectorï¼ˆpostgresqlï¼‰
-
-
-
-**å·¥ç¨‹å®Œæ•´ä»£ç :**
-
-https://github.com/jianyuan1991/ragdemo
-
-https://gitee.com/jianyuan/ragdemo
-
-## ç¯å¢ƒå‡†å¤‡
-
-### Ollamaå’Œæ¨¡å‹
-
-Ollamaæœ¬åœ°éƒ¨ç½²
-
-ä¸‹è½½qwen:7b:
-
-```powershell
-ollama run qwen:7b
-```
-
-*Ollamaéƒ¨ç½²å’Œqwenæ¨¡å‹ä¸‹è½½å¯ä»¥å‚è€ƒ[Spring AI+Ollamaæœ¬åœ°ç¯å¢ƒæ­å»º](https://www.bxmdm.com/archives/2024030801)*
+ÏòÁ¿Êı¾İ¿â£ºpgvector£¨postgresql£©
 
 
+## »·¾³×¼±¸
 
-ä¸‹è½½embeddingæ¨¡å‹:
+ÏÂÔØembeddingÄ£ĞÍ:
 
 ```powershell
 ollama pull  mofanke/dmeta-embedding-zh
 ```
 
-![å®‰è£…dmeta-embedding-zhå®Œæˆ](./img/å®‰è£…dmeta-embedding-zhå®Œæˆ.png)
+![°²×°dmeta-embedding-zhÍê³É](./img/°²×°dmeta-embedding-zhÍê³É.png)
 
 
 
 ### pgvector
 
-pgvectoræ˜¯postgresqlçš„ä¸€ä¸ªæ‰©å±•ï¼Œä½¿å¾—postgresqlèƒ½å¤Ÿå­˜å‚¨å’Œæœç´¢å‘é‡æ•°æ®ï¼Œpgvector æä¾› 2 ç§ç±»å‹çš„ç´¢å¼•ï¼ŒIVFFlat å’Œ HNSWï¼Œéƒ½æ˜¯è¿‘ä¼¼æœ€è¿‘é‚» ï¼ˆANNï¼‰ ç´¢å¼•ï¼Œç´¢å¼•å¯ä»¥åŠ å¿«æœç´¢ç›¸ä¼¼å‘é‡çš„é€Ÿåº¦ã€‚ä»¥ä¸‹æ˜¯å®ƒä»¬çš„ä¸»è¦åŒºåˆ«ï¼š
+pgvectorÊÇpostgresqlµÄÒ»¸öÀ©Õ¹£¬Ê¹µÃpostgresqlÄÜ¹»´æ´¢ºÍËÑË÷ÏòÁ¿Êı¾İ£¬pgvector Ìá¹© 2 ÖÖÀàĞÍµÄË÷Òı£¬IVFFlat ºÍ HNSW£¬¶¼ÊÇ½üËÆ×î½üÁÚ £¨ANN£© Ë÷Òı£¬Ë÷Òı¿ÉÒÔ¼Ó¿ìËÑË÷ÏàËÆÏòÁ¿µÄËÙ¶È¡£ÒÔÏÂÊÇËüÃÇµÄÖ÷ÒªÇø±ğ£º
 
-![IVFFlatå’ŒHNSWçš„åŒºåˆ«](./img/IVFFlatå’ŒHNSWåŒºåˆ«.png)
+![IVFFlatºÍHNSWµÄÇø±ğ](./img/IVFFlatºÍHNSWÇø±ğ.png)
 
-å¦å¤–pgvector å¼•å…¥äº†ä¸‰ä¸ªå¯ç”¨äºè®¡ç®—ç›¸ä¼¼åº¦çš„æ–°è¿ç®—ç¬¦ï¼š <-> â€“ æ¬§å‡ é‡Œå¾—è·ç¦»ã€<#> â€“ è´Ÿå†…ç§¯ã€<=> â€“ ä½™å¼¦è·ç¦»
+ÁíÍâpgvector ÒıÈëÁËÈı¸ö¿ÉÓÃÓÚ¼ÆËãÏàËÆ¶ÈµÄĞÂÔËËã·û£º <-> ¨C Å·¼¸ÀïµÃ¾àÀë¡¢<#> ¨C ¸ºÄÚ»ı¡¢<=> ¨C ÓàÏÒ¾àÀë
 
-æœ¬æ¬¡demoé‡‡ç”¨dockerå®‰è£…pgvector:
+±¾´Îdemo²ÉÓÃdocker°²×°pgvector:
 
 ```
 docker run --name pgvector \
@@ -96,13 +79,117 @@ docker run --name pgvector \
 	-d pgvector/pgvector:pg16
 ```
 
+ÒªÊ¹ÓÃpgvector±¾»úÊÇĞèÒª°²×°postgresqlµÄ£¬µ«ÊÇÓÉÓÚ±¾»úµÄ5432¶Ë¿Ú±»Õ¼ÁË£¬ÕâÀïÎÒ¸Ã³É5433ÁË£¬¾ßÌåµÄÅäÖÃ²é¿´¹¤³ÌÎÄ¼şÖĞµÄ`src/main/resources/application.yml`£¨»¹ÓĞÓÃ»§ÃûÃÜÂëµÈ×ÔĞĞÅäÖÃ¼´¿É£©
+
+½øÈë**postgresql**µÄÃüÁîĞĞ£º
+`psql -h localhost -p 5433 -U postgres`
+
+ÓÉÓÚ±¾ÈË²»Ì«»áÓÃdocker£¬ËùÒÔ²Î¿¼¹Ù·½ÎÄµµµÄ·½·¨ÔÚwindowsÉÏÖ±½ÓÏÂÔØ²å¼ş£¨==¹Ù·½ÎÄµµ¾ÍÊÇºÃ°¡==£©
+
+**Windows**
+Ensure C++ support in Visual Studio is installed, and run:
+```
+call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+```
+Note: The exact path will vary depending on your Visual Studio version and edition
+
+Then use nmake to build:
+```
+set "PGROOT=C:\Program Files\PostgreSQL\16"//×Ô¼ºÏÂÔØµÄPostgresqlÂ·¾¶
+cd %TEMP%
+git clone --branch v0.7.2 https://github.com/pgvector/pgvector.git
+cd pgvector
+nmake /F Makefile.win
+nmake /F Makefile.win install
+See the installation notes if you run into issues
+```
+
+**×¢Òâ£º´Ë´¦ĞèÒª¹ÜÀíÔ±È¨ÏŞ**
+
+**Getting Started**
+Enable the extension (do this once in each database where you want to use it)
+```sql
+CREATE EXTENSION vector;
+```
+»á·µ»Ø´´½¨³É¹¦µÄÌáÊ¾ĞÅÏ¢
+
+## ²âÊÔ
+
+### ÉÏ´«Êı¾İ
+
+×¼±¸ÁËspringAI¼ò½éĞÅÏ¢×÷Îª²âÊÔÊı¾İ[Spring AI :: Spring AI Reference](https://docs.spring.io/spring-ai/reference/index.html)£¬·­ÒëÈçÏÂ£º
+
+```
+Spring AIÏîÄ¿Ö¼ÔÚ¼ò»¯°üº¬ÈË¹¤ÖÇÄÜ¹¦ÄÜµÄÓ¦ÓÃ³ÌĞòµÄ¿ª·¢£¬¶ø²»»áÔì³É²»±ØÒªµÄ¸´ÔÓĞÔ¡£
+¸ÃÏîÄ¿´ÓÖøÃûµÄ Python ÏîÄ¿ÖĞ¼³È¡Áé¸Ğ£¬ÀıÈç LangChain ºÍ LlamaIndex£¬µ« Spring AI ²¢²»ÊÇÕâĞ©ÏîÄ¿µÄÖ±½ÓÒÆÖ²¡£ ¸ÃÏîÄ¿³ÉÁ¢µÄĞÅÄîÊÇ£¬ÏÂÒ»²¨Éú³ÉÊ½ AI Ó¦ÓÃ³ÌĞò½«²»½öÊÊÓÃÓÚ Python ¿ª·¢ÈËÔ±£¬¶øÇÒ½«ÔÚĞí¶à±à³ÌÓïÑÔÖĞÎŞ´¦²»ÔÚ¡£
+Spring AI µÄºËĞÄÊÇÌá¹©³éÏó£¬×÷Îª¿ª·¢ AI Ó¦ÓÃ³ÌĞòµÄ»ù´¡¡£ ÕâĞ©³éÏó¾ßÓĞ¶àÖÖÊµÏÖ£¬Ö»Ğè×îÉÙµÄ´úÂë¸ü¸Ä¼´¿ÉÇáËÉ½»»»×é¼ş¡£
+Spring AI Ìá¹©ÒÔÏÂ¹¦ÄÜ£º
+1.Ö§³ÖËùÓĞÖ÷ÒªµÄÄ£ĞÍÌá¹©ÉÌ£¬ÈçOpenAI£¬Microsoft£¬Amazon£¬GoogleºÍHuggingface¡£
+2.Ö§³ÖµÄÄ£ĞÍÀàĞÍ°üÀ¨ÁÄÌìºÍÎÄ±¾µ½Í¼Ïñ£¬»¹ÓĞ¸ü¶àÀàĞÍÕıÔÚ¿ª·¢ÖĞ¡£
+3.¿ç AI Ìá¹©ÉÌµÄ¿ÉÒÆÖ² API£¬ÓÃÓÚÁÄÌìºÍÇ¶ÈëÄ£ĞÍ¡£Ö§³ÖÍ¬²½ºÍÁ÷ API Ñ¡Ïî¡£»¹Ö§³ÖÏÂÀ­ÒÔ·ÃÎÊÌØ¶¨ÓÚÄ£ĞÍµÄ¹¦ÄÜ¡£
+4.½« AI Ä£ĞÍÊä³öÓ³Éäµ½ POJO¡£
+5.Ö§³ÖËùÓĞÖ÷ÒªµÄÏòÁ¿Êı¾İ¿âÌá¹©ÉÌ£¬ÀıÈç Azure Vector Search¡¢Chroma¡¢Milvus¡¢Neo4j¡¢PostgreSQL/PGVector¡¢PineCone¡¢Qdrant¡¢Redis ºÍ Weaviate
+6.¿ç Vector Store Ìá¹©³ÌĞòµÄ¿ÉÒÆÖ² API£¬°üÀ¨Ò»¸öÀàËÆ SQL µÄĞÂÓ±ÔªÊı¾İ¹ıÂËÆ÷ API£¬¸Ã API Ò²ÊÇ¿ÉÒÆÖ²µÄ¡£
+7.º¯Êıµ÷ÓÃ
+8.ÓÃÓÚ AI Ä£ĞÍºÍÊ¸Á¿´æ´¢µÄ Spring Boot ×Ô¶¯ÅäÖÃºÍÆô¶¯Æ÷¡£
+9.ÓÃÓÚÊı¾İ¹¤³ÌµÄ ETL ¿ò¼Ü
+Í¨¹ı´Ë¹¦ÄÜ¼¯£¬Äú¿ÉÒÔÊµÏÖ³£¼ûÓÃÀı£¬ÀıÈç¡°ÎÄµµÎÊ´ğ¡±»ò¡°ÓëÎÄµµÁÄÌì¡±¡£
+¸ÅÄî²¿·ÖÌá¹©ÁË AI ¸ÅÄî¼°ÆäÔÚ Spring AI ÖĞµÄ±íÊ¾µÄ¸ß¼¶¸ÅÊö¡£
+¡°ÈëÃÅ¡±²¿·Ö½éÉÜÁËÈçºÎ´´½¨µÚÒ»¸ö AI Ó¦ÓÃ³ÌĞò¡£ ºóĞø²¿·Ö½«²ÉÓÃÒÔ´úÂëÎªÖĞĞÄµÄ·½·¨ÉîÈëÌ½ÌÖÃ¿¸ö×é¼şºÍ³£¼ûÓÃÀı¡£
+```
 
 
-## ä¸šåŠ¡å®ç°
 
-### æ•°æ®å‡†å¤‡
+Ê¹ÓÃpostmanµ÷ÓÃ½Ó¿Ú:
 
-æœ¬æ¬¡demoæ–‡æœ¬æ•°æ®è¯»å–txtæ–‡ä»¶ï¼Œspring aiä¸­å®ç°äº†TextReaderç”¨äºè¯»å–txtæ–‡ä»¶ï¼Œéƒ¨åˆ†æºç å¦‚ä¸‹ï¼Œæ¯”è¾ƒç®€å•ï¼Œæ²¡æœ‰å¯¹æ–‡æœ¬å†…å®¹è¿›è¡Œè§£æï¼ˆæ–‡æœ¬å†…å®¹çš„è§£æåœ¨RAGä¸­å¾ˆé‡è¦ï¼Œç›´æ¥å½±åƒRAGä¸­æ–‡æœ¬ä¿¡æ¯çš„æœç´¢æ•ˆæœï¼‰ã€‚
+![postman²âÊÔÎÄ¼şÉÏ´«](./img/postman²âÊÔÎÄ¼şÉÏ´«.png)
+
+ÕâÀïĞŞ¸ÄÁË´úÂë£¬²»È»»á±¨400£¬Bad request£¬Â·¾¶ÊÇsrc/main/java/com/bxmdm/ragdemo/controller/IndexController.java¡£
+
+¶øÇÒÔÚÊ¹ÓÃpostmanµÄÊ±ºò==ĞèÒªÌîĞ´keyÖµFile==
+![IndaexControllerµÄĞŞ¸Ä](./img/IndaexControllerµÄĞŞ¸Ä.jpg)
+
+ÉÏ´«µÄÎÄ¼şÔÚDÅÌÖĞ
+![´¢´æÎÄ¼şµÄµØ·½](./img/´¢´æÎÄ¼şµÄµØ·½.png)
+
+±¾´ÎdemoÊ¹ÓÃÏòÁ¿Êı¾İ¿âÎÊpgvector£¬ÏîÄ¿Æô¶¯ºó£¬spring ai»áÁ¬½Ópgvector×Ô¶¯´´½¨vector_store±í£¬µ±È»Ò²¿ÉÒÔÊÖ¶¯ÌáÇ°´´½¨:
+
+```sql
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS hstore;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS vector_store (
+	id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
+	content text,
+	metadata json,
+	embedding vector(768) # 768 ÊÇembeddingÄ£ĞÍnomic-embed-textµÄÎ¬¶È
+);
+
+CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
+```
+
+
+
+²âÊÔ¹ıºó¿ÉÒÔÁ¬½ÓÊı¾İ¿â²éÑ¯vector_store±íµÄÊı¾İ:
+
+![pgvectorÊı¾İ²éÑ¯](./img/pgvectorÊı¾İ²éÑ¯.png)
+
+Ê¹ÓÃpostgresqlµÄquery¹¤¾ß
+
+### ÎÊ´ğ²âÊÔ
+
+Êı¾İ×¼±¸½×¶ÎÒÑ¾­²âÊÔÍê³É£¬½ÓÏÂÀ´¿ÉÒÔ²âÊÔÎÊ´ğ£¬Ê¹ÓÃpostmanµ÷ÓÃ½Ó¿Ú:
+
+![postman²âÊÔÎÊ´ğ](./img/postman²âÊÔÎÊ´ğ.png)
+
+±¾µØCPUÔËĞĞ´óÄ£ĞÍ»¹ÊÇ±È½ÏÂı£¬µ«ÊÇÖÁ´ËÊÇ¶¼ÄÜÅÜÁË¡£
+
+## ´úÂëÊµÏÖ
+
+### Êı¾İ×¼±¸
+
+±¾´ÎdemoÎÄ±¾Êı¾İ¶ÁÈ¡txtÎÄ¼ş£¬spring aiÖĞÊµÏÖÁËTextReaderÓÃÓÚ¶ÁÈ¡txtÎÄ¼ş£¬²¿·ÖÔ´ÂëÈçÏÂ£¬±È½Ï¼òµ¥£¬Ã»ÓĞ¶ÔÎÄ±¾ÄÚÈİ½øĞĞ½âÎö£¨ÎÄ±¾ÄÚÈİµÄ½âÎöÔÚRAGÖĞºÜÖØÒª£¬Ö±½ÓÓ°ÏñRAGÖĞÎÄ±¾ĞÅÏ¢µÄËÑË÷Ğ§¹û£©¡£
 
 ```java
 String document = StreamUtils.copyToString(this.resource.getInputStream(), this.charset);
@@ -114,16 +201,16 @@ this.customMetadata.put(SOURCE_METADATA, this.resource.getFilename());
 return List.of(new Document(document, this.customMetadata));
 ```
 
-æœ¬æ¬¡demoé‡æ–°å®ç°TXTçš„è¯»å–ï¼Œæ ¹æ®å›è½¦ç¬¦å¯¹æ–‡æœ¬å†…å®¹è¿›è¡Œåˆ†æ®µï¼Œå¹¶é‡‡ç”¨çª—å£æ¨¡å¼å¯¹åˆ†æ®µå†…å®¹è¿›è¡Œæ–‡æ¡£åˆ’åˆ†ï¼Œå¯ä»¥å…ˆå¤åˆ¶TextReaderä»£ç ï¼Œæ–°å»ºâ€œParagraphTextReaderâ€å®ç°ç±»ï¼Œéƒ¨åˆ†å®ç°ä»£ç å¦‚ä¸‹ï¼š
+±¾´ÎdemoÖØĞÂÊµÏÖTXTµÄ¶ÁÈ¡£¬¸ù¾İ»Ø³µ·û¶ÔÎÄ±¾ÄÚÈİ½øĞĞ·Ö¶Î£¬²¢²ÉÓÃ´°¿ÚÄ£Ê½¶Ô·Ö¶ÎÄÚÈİ½øĞĞÎÄµµ»®·Ö£¬¿ÉÒÔÏÈ¸´ÖÆTextReader´úÂë£¬ĞÂ½¨¡°ParagraphTextReader¡±ÊµÏÖÀà£¬²¿·ÖÊµÏÖ´úÂëÈçÏÂ£º
 
 ```java
 /**
-* é»˜è®¤çª—å£å¤§å°ï¼Œä¸º1
+* Ä¬ÈÏ´°¿Ú´óĞ¡£¬Îª1
 */
 private static final int DEFAULT_WINDOW_SIZE = 1;
 
 /**
-* çª—å£å¤§å°ï¼Œä¸ºæ®µè½çš„æ•°é‡ï¼Œç”¨äºæ»šåŠ¨è¯»å–
+* ´°¿Ú´óĞ¡£¬Îª¶ÎÂäµÄÊıÁ¿£¬ÓÃÓÚ¹ö¶¯¶ÁÈ¡
 */
 private int windowSize = DEFAULT_WINDOW_SIZE;
 
@@ -131,9 +218,9 @@ public static final String START_PARAGRAPH_NUMBER = "startParagraphNumber";
 public static final String END_PARAGRAPH_NUMBER = "endParagraphNumber";
 
 /**
-* è¯»å–æ–‡æœ¬å†…å®¹,å¹¶æ ¹æ®æ¢è¡Œè¿›è¡Œåˆ†æ®µ,é‡‡ç”¨çª—å£æ¨¡å¼,çª—å£ä¸ºæ®µè½çš„æ•°é‡
+* ¶ÁÈ¡ÎÄ±¾ÄÚÈİ,²¢¸ù¾İ»»ĞĞ½øĞĞ·Ö¶Î,²ÉÓÃ´°¿ÚÄ£Ê½,´°¿ÚÎª¶ÎÂäµÄÊıÁ¿
 *
-* @return æ–‡æ¡£ä¿¡æ¯åˆ—è¡¨
+* @return ÎÄµµĞÅÏ¢ÁĞ±í
 */
 @Override
 public List<Document> get() {
@@ -146,10 +233,10 @@ public List<Document> get() {
         this.customMetadata.put(CHARSET_METADATA, this.charset.name());
         this.customMetadata.put(SOURCE_METADATA, this.resource.getFilename());
 		
-        //æ–‡æœ¬å†…å®¹æ ¹æ®å›è½¦ç¬¦è¿›è¡Œåˆ†æ®µ
+        //ÎÄ±¾ÄÚÈİ¸ù¾İ»Ø³µ·û½øĞĞ·Ö¶Î
         List<String> paragraphs = Arrays.asList(document.split("\n"));
 
-        //é‡‡ç”¨çª—å£æ»‘åŠ¨è¯»å–åˆ†æ®µå†…å®¹
+        //²ÉÓÃ´°¿Ú»¬¶¯¶ÁÈ¡·Ö¶ÎÄÚÈİ
         int startIndex = 0;
         int endIndex = startIndex + this.windowSize;
         if (endIndex > paragraphs.size()) {
@@ -166,11 +253,11 @@ public List<Document> get() {
 }
 
 /**
- * å°è£…æ®µè½æˆæ–‡æ¡£
- * @param paragraphList æ®µè½å†…å®¹åˆ—è¡¨
- * @param startParagraphNum å¼€å§‹æ®µè½ç¼–ç 
- * @param endParagraphNum ç»“æŸæ®µè½ç¼–ç 
- * @return æ–‡æ¡£ä¿¡æ¯
+ * ·â×°¶ÎÂä³ÉÎÄµµ
+ * @param paragraphList ¶ÎÂäÄÚÈİÁĞ±í
+ * @param startParagraphNum ¿ªÊ¼¶ÎÂä±àÂë
+ * @param endParagraphNum ½áÊø¶ÎÂä±àÂë
+ * @return ÎÄµµĞÅÏ¢
  */
 private Document toDocument(List<String> paragraphList, int startParagraphNum, int endParagraphNum) {
     Document doc = new Document(String.join("\n", paragraphList));
@@ -183,7 +270,7 @@ private Document toDocument(List<String> paragraphList, int startParagraphNum, i
 
 
 
-æ„å»ºæ–‡ä»¶ä¸Šä¼ æ¥å£ç”¨æ¥æ¥æ”¶TXTæ–‡ä»¶ï¼Œéƒ¨åˆ†ä»£ç å¦‚ä¸‹:
+¹¹½¨ÎÄ¼şÉÏ´«½Ó¿ÚÓÃÀ´½ÓÊÕTXTÎÄ¼ş£¬²¿·Ö´úÂëÈçÏÂ:
 
 ```java
 @PostMapping("/upload")
@@ -195,7 +282,7 @@ public ResponseEntity upload(@RequestBody MultipartFile file) {
 
 
 
-documentServiceæœåŠ¡ä¸­å®ç°æ–‡ä»¶çš„ä¸Šä¼ è§£æ,å¹¶ä½¿ç”¨spring aiä¸­çš„VectorStoreå­˜å‚¨æ•°æ®ï¼Œéƒ¨åˆ†ä»£ç å¦‚ä¸‹:
+documentService·şÎñÖĞÊµÏÖÎÄ¼şµÄÉÏ´«½âÎö,²¢Ê¹ÓÃspring aiÖĞµÄVectorStore´æ´¢Êı¾İ£¬²¿·Ö´úÂëÈçÏÂ:
 
 ```java
 @Autowired
@@ -204,22 +291,22 @@ private VectorStore vectorStore;
 private static final String PATH = "D:\\demo\\ai\\path\\";
 
 /**
- * ä½¿ç”¨spring aiè§£ætxtæ–‡æ¡£
+ * Ê¹ÓÃspring ai½âÎötxtÎÄµµ
  *
  * @param file
  * @throws MalformedURLException
  */
 public void uploadDocument(MultipartFile file) {
-    //ä¿å­˜fileåˆ°æœ¬åœ°
+    //±£´æfileµ½±¾µØ
     String textResource = file.getOriginalFilename();
-    //åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æ˜¯TXT
+    //ÅĞ¶ÏÎÄ¼şÊÇ·ñÊÇTXT
     if (!textResource.endsWith(".txt")) {
-        throw new RuntimeException("åªæ”¯æŒtxtæ ¼å¼æ–‡ä»¶");
+        throw new RuntimeException("Ö»Ö§³Ötxt¸ñÊ½ÎÄ¼ş");
     }
     String filepath = PATH + textResource;
     File file1 = new File(filepath);
     if(file1.exists()){
-        throw new RuntimeException("æ–‡ä»¶å·²å­˜åœ¨");
+        throw new RuntimeException("ÎÄ¼şÒÑ´æÔÚ");
     }
     try {
         file.transferTo(file1);
@@ -233,7 +320,7 @@ public void uploadDocument(MultipartFile file) {
 private List<Document> paragraphTextReader(File file) {
     List<Document> docs = null;
     try {
-        //è¿™é‡Œæˆ‘ä»¬è®¾ç½®æ»‘åŠ¨çª—å£å¤§å°ä¸º5
+        //ÕâÀïÎÒÃÇÉèÖÃ»¬¶¯´°¿Ú´óĞ¡Îª5
         ParagraphTextReader reader = new ParagraphTextReader(new FileUrlResource(file.toURI().toURL()), 5);
         reader.getCustomMetadata().put("filename", file.getName());
         reader.getCustomMetadata().put("filepath", file.getAbsolutePath());
@@ -247,46 +334,46 @@ private List<Document> paragraphTextReader(File file) {
 
 
 
-### ç”¨æˆ·æé—®
+### ÓÃ»§ÌáÎÊ
 
-ç”¨æˆ·æé—®éœ€è¦å…ˆæ ¹æ®é—®é¢˜ä»å‘é‡åº“ä¸­æœç´¢å“åº”çš„æ®µè½ï¼Œç”±äºdemoä¸­æ–‡æœ¬è§£æä½¿ç”¨æ»‘åŠ¨çª—å£çš„æ¨¡å‹è¿›è¡Œè¯»å–ï¼Œè¿™é‡Œéœ€è¦å¯¹æœç´¢ç»“æœè¿›è¡Œä¸€æ¬¡åˆå¹¶ï¼Œä»£ç éƒ¨åˆ†å¦‚ä¸‹ï¼š
+ÓÃ»§ÌáÎÊĞèÒªÏÈ¸ù¾İÎÊÌâ´ÓÏòÁ¿¿âÖĞËÑË÷ÏìÓ¦µÄ¶ÎÂä£¬ÓÉÓÚdemoÖĞÎÄ±¾½âÎöÊ¹ÓÃ»¬¶¯´°¿ÚµÄÄ£ĞÍ½øĞĞ¶ÁÈ¡£¬ÕâÀïĞèÒª¶ÔËÑË÷½á¹û½øĞĞÒ»´ÎºÏ²¢£¬´úÂë²¿·ÖÈçÏÂ£º
 
 ```java
 /**
- * åˆå¹¶æ–‡æ¡£åˆ—è¡¨
- * @param documentList æ–‡æ¡£åˆ—è¡¨
- * @return åˆå¹¶åçš„æ–‡æ¡£åˆ—è¡¨
+ * ºÏ²¢ÎÄµµÁĞ±í
+ * @param documentList ÎÄµµÁĞ±í
+ * @return ºÏ²¢ºóµÄÎÄµµÁĞ±í
  */
 private List<Document> mergeDocuments(List<Document> documentList) {
 	List<Document> mergeDocuments = new ArrayList();
-	//æ ¹æ®æ–‡æ¡£æ¥æºè¿›è¡Œåˆ†ç»„
+	//¸ù¾İÎÄµµÀ´Ô´½øĞĞ·Ö×é
 	Map<String, List<Document>> documentMap = documentList.stream().collect(Collectors.groupingBy(item -> ((String) item.getMetadata().get("source"))));
 	for (Entry<String, List<Document>> docListEntry : documentMap.entrySet()) {
-		//è·å–æœ€å¤§çš„æ®µè½ç»“æŸç¼–ç 
+		//»ñÈ¡×î´óµÄ¶ÎÂä½áÊø±àÂë
 		int maxParagraphNum = (int) docListEntry.getValue()
 				.stream().max(Comparator.comparing(item -> ((int) item.getMetadata().get(END_PARAGRAPH_NUMBER)))).get().getMetadata().get(END_PARAGRAPH_NUMBER);
-		//æ ¹æ®æœ€å¤§æ®µè½ç»“æŸç¼–ç æ„å»ºä¸€ä¸ªç”¨äºåˆå¹¶æ®µè½çš„ç©ºæ•°ç»„
+		//¸ù¾İ×î´ó¶ÎÂä½áÊø±àÂë¹¹½¨Ò»¸öÓÃÓÚºÏ²¢¶ÎÂäµÄ¿ÕÊı×é
 		String[] paragraphs = new String[maxParagraphNum];
-		//ç”¨äºè·å–æœ€å°æ®µè½å¼€å§‹ç¼–ç 
+		//ÓÃÓÚ»ñÈ¡×îĞ¡¶ÎÂä¿ªÊ¼±àÂë
 		int minParagraphNum = maxParagraphNum;
 		for (Document document : docListEntry.getValue()) {
-			//æ–‡æ¡£å†…å®¹æ ¹æ®å›è½¦è¿›è¡Œåˆ†æ®µ
+			//ÎÄµµÄÚÈİ¸ù¾İ»Ø³µ½øĞĞ·Ö¶Î
 			String[] tempPs = document.getContent().split("\n");
-			//è·å–æ–‡æ¡£å¼€å§‹æ®µè½ç¼–ç 
+			//»ñÈ¡ÎÄµµ¿ªÊ¼¶ÎÂä±àÂë
 			int startParagraphNumber = (int) document.getMetadata().get(START_PARAGRAPH_NUMBER);
 			if (minParagraphNum > startParagraphNumber) {
 				minParagraphNum = startParagraphNumber;
 			}
-			//å°†æ–‡æ¡£æ®µè½åˆ—è¡¨æ‹·è´åˆ°åˆå¹¶æ®µè½æ•°ç»„ä¸­
+			//½«ÎÄµµ¶ÎÂäÁĞ±í¿½±´µ½ºÏ²¢¶ÎÂäÊı×éÖĞ
 			System.arraycopy(tempPs, 0, paragraphs, startParagraphNumber-1, tempPs.length);
 		}
-		//åˆå¹¶æ®µè½å»é™¤ç©ºå€¼,å¹¶ç»„æˆæ–‡æ¡£å†…å®¹
+		//ºÏ²¢¶ÎÂäÈ¥³ı¿ÕÖµ,²¢×é³ÉÎÄµµÄÚÈİ
 		Document mergeDoc = new Document(ArrayUtil.join(ArrayUtil.removeNull(paragraphs), "\n"));
-		//åˆå¹¶å…ƒæ•°æ®
+		//ºÏ²¢ÔªÊı¾İ
 		mergeDoc.getMetadata().putAll(docListEntry.getValue().get(0).getMetadata());
-		//è®¾ç½®å…ƒæ•°æ®:å¼€å§‹æ®µè½ç¼–ç 
+		//ÉèÖÃÔªÊı¾İ:¿ªÊ¼¶ÎÂä±àÂë
 		mergeDoc.getMetadata().put(START_PARAGRAPH_NUMBER, minParagraphNum);
-		//è®¾ç½®å…ƒæ•°æ®:ç»“æŸæ®µè½ç¼–ç 
+		//ÉèÖÃÔªÊı¾İ:½áÊø¶ÎÂä±àÂë
 		mergeDoc.getMetadata().put(END_PARAGRAPH_NUMBER, maxParagraphNum);
 		mergeDocuments.add(mergeDoc);
 	}
@@ -294,10 +381,10 @@ private List<Document> mergeDocuments(List<Document> documentList) {
 }
 
 /**
-	 * æ ¹æ®å…³é”®è¯æœç´¢å‘é‡åº“
+	 * ¸ù¾İ¹Ø¼ü´ÊËÑË÷ÏòÁ¿¿â
 	 *
-	 * @param keyword å…³é”®è¯
-	 * @return æ–‡æ¡£åˆ—è¡¨
+	 * @param keyword ¹Ø¼ü´Ê
+	 * @return ÎÄµµÁĞ±í
 	 */
 public List<Document> search(String keyword) {
     return mergeDocuments(vectorStore.similaritySearch(keyword));
@@ -306,37 +393,37 @@ public List<Document> search(String keyword) {
 
 
 
-æ¥ä¸‹æ¥æ„å»ºå°è£…promptå’Œè°ƒç”¨å¤§æ¨¡å‹çš„æ–¹æ³•ï¼Œä»£ç éƒ¨åˆ†å¦‚ä¸‹:
+½ÓÏÂÀ´¹¹½¨·â×°promptºÍµ÷ÓÃ´óÄ£ĞÍµÄ·½·¨£¬´úÂë²¿·ÖÈçÏÂ:
 
 ```java
 /**
- * é—®ç­”,æ ¹æ®è¾“å…¥å†…å®¹å›ç­”
- * @param message è¾“å…¥å†…å®¹
- * @return å›ç­”å†…å®¹
+ * ÎÊ´ğ,¸ù¾İÊäÈëÄÚÈİ»Ø´ğ
+ * @param message ÊäÈëÄÚÈİ
+ * @return »Ø´ğÄÚÈİ
  */
 public String chat(String message) {
-	//æŸ¥è¯¢è·å–æ–‡æ¡£ä¿¡æ¯
+	//²éÑ¯»ñÈ¡ÎÄµµĞÅÏ¢
 	List<Document> documents = search(message);
 	
-	//æå–æ–‡æœ¬å†…å®¹
+	//ÌáÈ¡ÎÄ±¾ÄÚÈİ
 	String content = documents.stream()
 			.map(Document::getContent)
 			.collect(Collectors.joining("\n"));
 	
-	//å°è£…promptå¹¶è°ƒç”¨å¤§æ¨¡å‹
+	//·â×°prompt²¢µ÷ÓÃ´óÄ£ĞÍ
 	String chatResponse = ollamaChatClient.call(getChatPrompt2String(message, content));
 	return chatResponse;
 }
 
 /**
- * è·å–prompt
- * @param message æé—®å†…å®¹
- * @param context ä¸Šä¸‹æ–‡
+ * »ñÈ¡prompt
+ * @param message ÌáÎÊÄÚÈİ
+ * @param context ÉÏÏÂÎÄ
  * @return prompt
  */
 private String getChatPrompt2String(String message, String context) {
 	String promptText = """
-			è¯·ç”¨ä»…ç”¨ä»¥ä¸‹å†…å®¹å›ç­”"%s":
+			ÇëÓÃ½öÓÃÒÔÏÂÄÚÈİ»Ø´ğ"%s":
 			%s
 			""";
 	return String.format(promptText, message, context);
@@ -345,7 +432,7 @@ private String getChatPrompt2String(String message, String context) {
 
 
 
-å†æ„å»ºä¸€ä¸ªæ¥å£ç”¨äºç”¨äºæé—®ï¼Œä»£ç éƒ¨åˆ†å¦‚ä¸‹:
+ÔÙ¹¹½¨Ò»¸ö½Ó¿ÚÓÃÓÚÓÃÓÚÌáÎÊ£¬´úÂë²¿·ÖÈçÏÂ:
 
 ```java
 @GetMapping("/chat")
@@ -356,9 +443,9 @@ public ResponseEntity chat(@RequestParam String message) {
 
 
 
-é…ç½®ä¿¡æ¯
+ÅäÖÃĞÅÏ¢
 
-æœ€åéœ€è¦é…ç½®æ–‡ä»¶ä¸­é…ç½®å‘é‡æ•°æ®åº“ã€embeddingå’Œå¤§æ¨¡å‹chatä¿¡æ¯ï¼Œapplication.ymlé…ç½®éƒ¨åˆ†å¦‚ä¸‹:
+×îºóĞèÒªÅäÖÃÎÄ¼şÖĞÅäÖÃÏòÁ¿Êı¾İ¿â¡¢embeddingºÍ´óÄ£ĞÍchatĞÅÏ¢£¬application.ymlÅäÖÃ²¿·ÖÈçÏÂ:
 
 ```yaml
 spring:
@@ -369,7 +456,7 @@ spring:
   ai:
     vectorstore:
       pgvector:
-      	##embeddingçš„å‘é‡ç»´åº¦ï¼Œè¿™é‡Œçš„768æ˜¯æ ¹æ®nomic-embed-textè¿”å›çš„å‘é‡ç»´åº¦é…ç½®çš„
+      	##embeddingµÄÏòÁ¿Î¬¶È£¬ÕâÀïµÄ768ÊÇ¸ù¾İnomic-embed-text·µ»ØµÄÏòÁ¿Î¬¶ÈÅäÖÃµÄ
         dimensions: 768
     ollama:
       base-url: http://localhost:11434
@@ -381,7 +468,7 @@ spring:
 
 
 
-æµ‹è¯•embeddingæ¨¡å‹çš„å‘é‡ç»´åº¦å¯ä»¥å†™ä¸€ä¸ªæµ‹è¯•æ–¹æ³•æ¥è·å–ï¼Œä»£ç éƒ¨åˆ†å¦‚ä¸‹ï¼š
+²âÊÔembeddingÄ£ĞÍµÄÏòÁ¿Î¬¶È¿ÉÒÔĞ´Ò»¸ö²âÊÔ·½·¨À´»ñÈ¡£¬´úÂë²¿·ÖÈçÏÂ£º
 
 ```java
 @Autowired
@@ -389,88 +476,20 @@ private EmbeddingClient embeddingClient;
 
 @Test
 void embeddingDimensionsTest(){
-    //æ‰“å°embeddingæ¨¡å‹çš„è½¬æ¢å‘é‡çš„ç»´åº¦
+    //´òÓ¡embeddingÄ£ĞÍµÄ×ª»»ÏòÁ¿µÄÎ¬¶È
 	System.out.println(embeddingClient.dimensions());
 }
 ```
 
 
 
+## ×Ü½á
 
-
-## æµ‹è¯•
-
-### ä¸Šä¼ æ•°æ®
-
-å‡†å¤‡äº†springAIç®€ä»‹ä¿¡æ¯ä½œä¸ºæµ‹è¯•æ•°æ®[Spring AI :: Spring AI Reference](https://docs.spring.io/spring-ai/reference/index.html)ï¼Œç¿»è¯‘å¦‚ä¸‹ï¼š
-
-```
-Spring AIé¡¹ç›®æ—¨åœ¨ç®€åŒ–åŒ…å«äººå·¥æ™ºèƒ½åŠŸèƒ½çš„åº”ç”¨ç¨‹åºçš„å¼€å‘ï¼Œè€Œä¸ä¼šé€ æˆä¸å¿…è¦çš„å¤æ‚æ€§ã€‚
-è¯¥é¡¹ç›®ä»è‘—åçš„ Python é¡¹ç›®ä¸­æ±²å–çµæ„Ÿï¼Œä¾‹å¦‚ LangChain å’Œ LlamaIndexï¼Œä½† Spring AI å¹¶ä¸æ˜¯è¿™äº›é¡¹ç›®çš„ç›´æ¥ç§»æ¤ã€‚ è¯¥é¡¹ç›®æˆç«‹çš„ä¿¡å¿µæ˜¯ï¼Œä¸‹ä¸€æ³¢ç”Ÿæˆå¼ AI åº”ç”¨ç¨‹åºå°†ä¸ä»…é€‚ç”¨äº Python å¼€å‘äººå‘˜ï¼Œè€Œä¸”å°†åœ¨è®¸å¤šç¼–ç¨‹è¯­è¨€ä¸­æ— å¤„ä¸åœ¨ã€‚
-Spring AI çš„æ ¸å¿ƒæ˜¯æä¾›æŠ½è±¡ï¼Œä½œä¸ºå¼€å‘ AI åº”ç”¨ç¨‹åºçš„åŸºç¡€ã€‚ è¿™äº›æŠ½è±¡å…·æœ‰å¤šç§å®ç°ï¼Œåªéœ€æœ€å°‘çš„ä»£ç æ›´æ”¹å³å¯è½»æ¾äº¤æ¢ç»„ä»¶ã€‚
-Spring AI æä¾›ä»¥ä¸‹åŠŸèƒ½ï¼š
-1.æ”¯æŒæ‰€æœ‰ä¸»è¦çš„æ¨¡å‹æä¾›å•†ï¼Œå¦‚OpenAIï¼ŒMicrosoftï¼ŒAmazonï¼ŒGoogleå’ŒHuggingfaceã€‚
-2.æ”¯æŒçš„æ¨¡å‹ç±»å‹åŒ…æ‹¬èŠå¤©å’Œæ–‡æœ¬åˆ°å›¾åƒï¼Œè¿˜æœ‰æ›´å¤šç±»å‹æ­£åœ¨å¼€å‘ä¸­ã€‚
-3.è·¨ AI æä¾›å•†çš„å¯ç§»æ¤ APIï¼Œç”¨äºèŠå¤©å’ŒåµŒå…¥æ¨¡å‹ã€‚æ”¯æŒåŒæ­¥å’Œæµ API é€‰é¡¹ã€‚è¿˜æ”¯æŒä¸‹æ‹‰ä»¥è®¿é—®ç‰¹å®šäºæ¨¡å‹çš„åŠŸèƒ½ã€‚
-4.å°† AI æ¨¡å‹è¾“å‡ºæ˜ å°„åˆ° POJOã€‚
-5.æ”¯æŒæ‰€æœ‰ä¸»è¦çš„å‘é‡æ•°æ®åº“æä¾›å•†ï¼Œä¾‹å¦‚ Azure Vector Searchã€Chromaã€Milvusã€Neo4jã€PostgreSQL/PGVectorã€PineConeã€Qdrantã€Redis å’Œ Weaviate
-6.è·¨ Vector Store æä¾›ç¨‹åºçš„å¯ç§»æ¤ APIï¼ŒåŒ…æ‹¬ä¸€ä¸ªç±»ä¼¼ SQL çš„æ–°é¢–å…ƒæ•°æ®è¿‡æ»¤å™¨ APIï¼Œè¯¥ API ä¹Ÿæ˜¯å¯ç§»æ¤çš„ã€‚
-7.å‡½æ•°è°ƒç”¨
-8.ç”¨äº AI æ¨¡å‹å’ŒçŸ¢é‡å­˜å‚¨çš„ Spring Boot è‡ªåŠ¨é…ç½®å’Œå¯åŠ¨å™¨ã€‚
-9.ç”¨äºæ•°æ®å·¥ç¨‹çš„ ETL æ¡†æ¶
-é€šè¿‡æ­¤åŠŸèƒ½é›†ï¼Œæ‚¨å¯ä»¥å®ç°å¸¸è§ç”¨ä¾‹ï¼Œä¾‹å¦‚â€œæ–‡æ¡£é—®ç­”â€æˆ–â€œä¸æ–‡æ¡£èŠå¤©â€ã€‚
-æ¦‚å¿µéƒ¨åˆ†æä¾›äº† AI æ¦‚å¿µåŠå…¶åœ¨ Spring AI ä¸­çš„è¡¨ç¤ºçš„é«˜çº§æ¦‚è¿°ã€‚
-â€œå…¥é—¨â€éƒ¨åˆ†ä»‹ç»äº†å¦‚ä½•åˆ›å»ºç¬¬ä¸€ä¸ª AI åº”ç”¨ç¨‹åºã€‚ åç»­éƒ¨åˆ†å°†é‡‡ç”¨ä»¥ä»£ç ä¸ºä¸­å¿ƒçš„æ–¹æ³•æ·±å…¥æ¢è®¨æ¯ä¸ªç»„ä»¶å’Œå¸¸è§ç”¨ä¾‹ã€‚
-```
+Spring AI½áºÏOllamaºÍpgvectorÄÜºÜ·½±ãµÄ¹¹½¨Ò»¸öRAGÎÄµµÎÊ´ğÓ¦ÓÃ¡£RAGĞ§¹ûÊÜµ½ÎÄµµµÄ²ğ·Ö¡¢embedding¡¢¶ÎÂäËÑË÷¡¢promptÄ£°å¡¢´óÄ£ĞÍÕâĞ©ÒòËØµÄÓ°Ïì£¬ÒªÏëÓÅ»¯µÄ»°¿ÉÒÔ´ÓÕâĞ©·½ÃæÈ¥¿¼ÂÇ¡£
 
 
 
-ä½¿ç”¨postmanè°ƒç”¨æ¥å£:
-
-![postmanæµ‹è¯•æ–‡ä»¶ä¸Šä¼ ](./img/postmanæµ‹è¯•æ–‡ä»¶ä¸Šä¼ .png)
-
-æœ¬æ¬¡demoä½¿ç”¨å‘é‡æ•°æ®åº“é—®pgvectorï¼Œé¡¹ç›®å¯åŠ¨åï¼Œspring aiä¼šè¿æ¥pgvectorè‡ªåŠ¨åˆ›å»ºvector_storeè¡¨ï¼Œå½“ç„¶ä¹Ÿæ‰‹åŠ¨æå‰åˆ›å»º:
-
-```sql
-CREATE EXTENSION IF NOT EXISTS vector;
-CREATE EXTENSION IF NOT EXISTS hstore;
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
-CREATE TABLE IF NOT EXISTS vector_store (
-	id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
-	content text,
-	metadata json,
-	embedding vector(768) # 768 æ˜¯embeddingæ¨¡å‹nomic-embed-textçš„ç»´åº¦
-);
-
-CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
-```
-
-
-
-æµ‹è¯•è¿‡åå¯ä»¥è¿æ¥æ•°æ®åº“æŸ¥è¯¢vector_storeè¡¨çš„æ•°æ®:
-
-![pgvectoræ•°æ®æŸ¥è¯¢](./img/pgvectoræ•°æ®æŸ¥è¯¢.png)
-
-
-
-### é—®ç­”æµ‹è¯•
-
-æ•°æ®å‡†å¤‡é˜¶æ®µå·²ç»æµ‹è¯•å®Œæˆï¼Œæ¥ä¸‹æ¥å¯ä»¥æµ‹è¯•é—®ç­”ï¼Œä½¿ç”¨postmanè°ƒç”¨æ¥å£:
-
-![postmanæµ‹è¯•é—®ç­”](./img/postmanæµ‹è¯•é—®ç­”.png)
-
-*æœ¬åœ°CPUè¿è¡Œå¤§æ¨¡å‹è¿˜æ˜¯å¤ªæ…¢äº†ï¼Œä¸€ä¸ªæ¥å£è·‘äº†1åˆ†åŠå¤šã€‚*
-
-
-
-## æ€»ç»“
-
-Spring AIç»“åˆOllamaå’Œpgvectorèƒ½å¾ˆæ–¹ä¾¿çš„æ„å»ºä¸€ä¸ªRAGæ–‡æ¡£é—®ç­”åº”ç”¨ã€‚RAGæ•ˆæœå—åˆ°æ–‡æ¡£çš„æ‹†åˆ†ã€embeddingã€æ®µè½æœç´¢ã€promptæ¨¡æ¿ã€å¤§æ¨¡å‹è¿™äº›å› ç´ çš„å½±å“ï¼Œè¦æƒ³ä¼˜åŒ–çš„è¯å¯ä»¥ä»è¿™äº›æ–¹é¢å»è€ƒè™‘ã€‚
-
-
-
-**å‚è€ƒï¼š**
+**²Î¿¼£º**
 
 [pgvector/pgvector: Open-source vector similarity search for Postgres (github.com)](https://github.com/pgvector/pgvector)
 
